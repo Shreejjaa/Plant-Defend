@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🌿 PlantDefend – AI Leaf Classifier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #e0f7fa, #a5d6a7);
+            text-align: center;
+            padding: 50px;
+        }
+        h2 {
+            color: #2e7d32;
+        }
+        .box {
+            background-color: white;
+            padding: 30px;
+            margin: auto;
+            width: 60%;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        input[type="file"] {
+            margin-top: 20px;
+            padding: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #66bb6a;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 30px;
+            font-size: 18px;
+            color: #1b5e20;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>🌿 PlantDefend – Leaf Disease Classifier</h2>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" required><br>
+            <button type="submit">Check Leaf Health</button>
+        </form>
+        {% if result %}
+            <div class="result">
+                <h3>Result:</h3>
+                <p>{{ result }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
